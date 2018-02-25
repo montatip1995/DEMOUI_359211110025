@@ -1,8 +1,42 @@
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.layout.GridPane?>
+<?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<GridPane fx:controller="sample.Controller"
-          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
-</GridPane>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" style="-fx-background-color: #ffebee;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Pane prefHeight="400.0" prefWidth="259.0" style="-fx-background-color: #f8bbd0;">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/icons8_Curriculum_48px.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="62.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="School Management System" />
+         </children>
+      </Pane>
+      <TextField fx:id="username" layoutX="306.0" layoutY="77.0" promptText="username" style="-fx-background-color: #f06292;" />
+      <TextField fx:id="password" layoutX="306.0" layoutY="126.0" promptText="password" style="-fx-background-color: #f06292;" />
+      <Text layoutX="306.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="username" />
+      <Text layoutX="306.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="password" />
+      <Button fx:id="btnLogin" layoutX="291.0" layoutY="188.0" mnemonicParsing="false" onAction="#Login" prefHeight="25.0" prefWidth="139.0" style="-fx-background-color: #e1bee7;" text="Login" />
+      <ImageView fitHeight="37.0" fitWidth="35.0" layoutX="265.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8_User_50px_1.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="265.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/icons8_Keepass_50px.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="269.0" layoutY="369.0" text="DB Status:" />
+      <Label fx:id="dbStatus" layoutX="331.0" layoutY="369.0" prefHeight="17.0" prefWidth="150.0" textFill="#f50b0b" />
+   </children>
+</AnchorPane>

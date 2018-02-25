@@ -9,6 +9,7 @@ import java.sql.SQLException;
 
 public class loginModel {
     Connection connection;
+
     public loginModel() {
         try {
             this.connection = dbConnection.getConnection();
@@ -20,26 +21,28 @@ public class loginModel {
         }
     }
     public boolean isDatabaseConnection(){
-        return  this.connection !=null;
+
+        return this.connection != null;
     }
-    public  boolean isLogin(String user,String pass) throws SQLException {
+
+    public boolean isLogin(String user, String pass) throws SQLException {
         PreparedStatement pr = null;
         ResultSet rs = null;
 
-        String sql="SELECT*FROM user where username=? and"+
-                "password=?";
+        String sql = "SELECT * FROM user where username = ? and " +
+                "password = ?";
         try {
             pr = this.connection.prepareStatement(sql);
-            pr.setString(2,user);
-            pr.setString(3,pass);
+            pr.setString(1, user);
+            pr.setString(2, pass);
 
-            rs=pr.executeQuery();
+            rs = pr.executeQuery();
 
-            if (rs.next()){
-                return  true;
+            if (rs.next()) {
+                return true;
             }
             return false;
-        }catch (SQLException ex){
+        } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
         }finally {
@@ -47,7 +50,5 @@ public class loginModel {
             rs.close();
         }
 
-//        return true;
     }
-
 }//loginModel
